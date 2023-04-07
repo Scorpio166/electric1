@@ -4,9 +4,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.ListView;
 
 import com.example.electric.R;
+import com.example.electric.Util.CommonVariables;
 import com.example.electric.adapter.MyDeviceAdapter;
 import com.example.electric.adapter.MyFamilyAdapter;
 
@@ -19,6 +21,7 @@ public class MyDeviceActivity extends AppCompatActivity {
         setContentView(R.layout.activity_my_device);
         ListView listView = findViewById(R.id.liner);
         MyDeviceAdapter adapter = new MyDeviceAdapter(this);
+        Log.i("MyDeviceActivity", "onCreate: " + CommonVariables.deviceList.size());
         listView.setAdapter(adapter);
     }
 }

@@ -192,6 +192,7 @@ public class LoginMainActivity extends AppCompatActivity implements View.OnClick
 //                    Log.i("LoginMainActivity", "子线程访问失败");
 //                    connection.disconnect();
 //                }
+                connection.disconnect();
                 countDownLatch.countDown();
 //                Log.i("LoginMainActivity", "countDownLatch:" + countDownLatch);
             } catch (Exception e) {

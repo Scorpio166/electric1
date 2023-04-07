@@ -69,20 +69,20 @@ public class MyDeviceAdapter  extends BaseAdapter {
 
         // 给控制设置好数据
         Device device = CommonVariables.deviceList.get(position);
-        //base64解密
-        byte[] decodedUrlByte = Base64.getDecoder().decode(device.getDeviceModelPicture());
-        String decodedUrl = new String(decodedUrlByte);
-        countDownLatch = new CountDownLatch(1);
-        getImage(User.getSeverUrl() + decodedUrl);//4/7
-//        holder.deviceIcon.setImageURI(Uri.parse(User.getSeverUrl() + decodedUrl));
-        try {
-            countDownLatch.await();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-        Log.i("MyDeviceAdapter：", "url:" + User.getSeverUrl() + decodedUrl);
+//        //base64解密
+//        byte[] decodedUrlByte = Base64.getDecoder().decode(device.getDeviceModelPicture());
+//        String decodedUrl = new String(decodedUrlByte);
+//        countDownLatch = new CountDownLatch(1);
+//        getImage(User.getSeverUrl() + decodedUrl);//4/7
+////        holder.deviceIcon.setImageURI(Uri.parse(User.getSeverUrl() + decodedUrl));
+//        try {
+//            countDownLatch.await();
+//        } catch (InterruptedException e) {
+//            e.printStackTrace();
+//        }
+//        Log.i("MyDeviceAdapter：", "url:" + User.getSeverUrl() + decodedUrl);
         holder.deviceName.setText(device.getDeviceName());
-        holder.joinTime.setText(device.getDeviceCreateTime());
+        holder.joinTime.setText(device.getActivateTime());
         holder.isOnline.setText("在线");//接口未完善
         if(device.getIsOFF()==1) {
 //            holder.isOpen.setText("关闭");

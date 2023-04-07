@@ -13,8 +13,8 @@ public class User {
     private static String sex;//用户性别  sex （0男 1女 2未知）
     private static String avatar;//头像路径  avatar
 
-//    private static String severUrl = "https://app.ceravo.cn/";//图片等资源获取url  //ipconfig/all
-    private static String severUrl = "http://10.149.3.22:8080/";//图片等资源获取url
+//    private static String severUrl = "https://app.ceravo.cn";//图片等资源获取url  //ipconfig/all
+    private static String severUrl = "http://10.149.3.22:8080";//图片等资源获取url
 
 //    private static String baseurl = "https://app.ceravo.cn:443/wechat/";//登录账号  输入
     private static String baseurl = "http://10.149.3.22:8080/wechat/";//登录账号  输入
