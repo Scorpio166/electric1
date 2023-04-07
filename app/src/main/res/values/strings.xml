@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">智能用电系统</string>
+    <string name="login_text">登录</string>
+    <string name="login_by_password">密码登录</string>
+    <string name="login_name">用户名: &#160; </string>
+    <string name="input_login_name">请输入用户名</string>
+    <string name="login_password">登录密码：</string>
+    <string name="input_password">请输入密码</string>
+    <string name="remember_password">记住密码</string>
+    <string name="login">登&#160; &#160; &#160; 录</string>
+    <string name="loading">加载中…</string>
+    <string name="MyUserName">用户名</string>
+    <string name="MyFamilyNumber">家庭数: </string>
+    <string name="MyEquipNumber">设备数: </string>
+    <string name="my_account">我的账号</string>
+    <string name="my_family">我的家庭</string>
+    <string name="my_join_family">加入的家庭</string>
+    <string name="my_operation_log">操作日志</string>
+    <string name="my_about">关于</string>
+    <string name="_0">0</string>
+    <string name="warning_now">当前告警</string>
+    <string name="warning_history">历史告警</string>
+    <string name="warning_unit">条</string>
+
+    <string name="title_activity_main">MainActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="title_my">我</string>
+    <string name="sure">确定</string>
+    <string name="my_device">我的设备</string>
+</resources>

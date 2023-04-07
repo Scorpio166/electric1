@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.my.MyFragment"
+    android:background="@color/background"
+    android:paddingStart="10dp"
+    android:paddingEnd="10dp"
+    android:id="@+id/background"
+    >
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/my_name_background"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/MyAvatar"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/oval_shape"
+                    android:contentDescription="@drawable/unlogin"
+                    tools:srcCompat="@drawable/unlogin" />
+
+                <TextView
+                    android:id="@+id/UserName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:gravity="center"
+                    android:text="@string/MyUserName"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/large_font_size"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:baselineAligned="false"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/MyFamily"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="3"
+                            android:gravity="end"
+                            android:text="@string/MyFamilyNumber"
+                            android:textSize="@dimen/common_font_size"
+                            tools:ignore="NestedWeights" />
+
+                        <TextView
+                            android:id="@+id/MyFamilyNumber"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:gravity="start"
+                            android:text="@string/_0"
+                            android:textSize="@dimen/common_font_size" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/MyEquip"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="3"
+                            android:gravity="end"
+                            android:text="@string/MyEquipNumber"
+                            android:textSize="@dimen/common_font_size"
+                            tools:ignore="NestedWeights" />
+
+                        <TextView
+                            android:id="@+id/MyEquipNumber"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:gravity="start"
+                            android:text="@string/_0"
+                            android:textSize="@dimen/common_font_size" />
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="10dp"
+                android:background="@drawable/my_other_background"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/my_account"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="?android:attr/selectableItemBackground"
+                    android:clickable="true"
+                    android:onClick="onClick_my_account"
+                    android:orientation="horizontal"
+                    android:paddingTop="13dp"
+                    android:paddingBottom="13dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="15dp"
+                        android:layout_weight="5"
+                        android:text="@string/my_account"
+                        android:textColor="#6E6E6E"
+                        android:textSize="@dimen/common_font_size" />
+
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/common_font_size"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:contentDescription="@string/my_account"
+                        app:srcCompat="@drawable/right" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginEnd="5dp"
+                    android:background="@color/grey" />
+
+                <LinearLayout
+                    android:id="@+id/my_family"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="?android:attr/selectableItemBackground"
+                    android:clickable="true"
+                    android:onClick="onClick_my_family"
+                    android:orientation="horizontal"
+                    android:paddingTop="13dp"
+                    android:paddingBottom="13dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="15dp"
+                        android:layout_weight="5"
+                        android:text="@string/my_family"
+                        android:textColor="#6E6E6E"
+                        android:textSize="@dimen/common_font_size" />
+
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/common_font_size"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:contentDescription="@string/my_family"
+                        app:srcCompat="@drawable/right" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginEnd="5dp"
+                    android:background="@color/grey" />
+
+                <LinearLayout
+                    android:id="@+id/my_device"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="?android:attr/selectableItemBackground"
+                    android:clickable="true"
+                    android:onClick="onClick_my_device"
+                    android:orientation="horizontal"
+                    android:paddingTop="13dp"
+                    android:paddingBottom="13dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="15dp"
+                        android:layout_weight="5"
+                        android:text="@string/my_device"
+                        android:textColor="#6E6E6E"
+                        android:textSize="@dimen/common_font_size" />
+
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/common_font_size"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:contentDescription="@string/my_device"
+                        app:srcCompat="@drawable/right" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".My.MyAccountActivity"
+    android:background="@color/background">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@color/white"
+            tools:ignore="MissingClass">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingEnd="15dp"
+                android:paddingTop="2dp"
+                android:paddingBottom="2dp"
+                tools:ignore="RtlSymmetry">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textSize="@dimen/common_font_size"
+                    android:layout_marginStart="15dp"
+                    android:layout_gravity="center"
+                    android:textColor="@color/black"
+                    android:text="头像" />
+
+                <ImageView
+                    android:id="@+id/MyHeadAvatar"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/oval_shape"
+                    android:contentDescription="@drawable/unlogin"
+                    tools:srcCompat="@drawable/unlogin" />
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/grey"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:paddingEnd="15dp"
+                tools:ignore="RtlSymmetry"
+                android:id="@+id/choose_sex"
+                android:clickable="true">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="性别"
+                    android:textSize="@dimen/common_font_size"
+                    android:layout_marginStart="15dp"
+                    android:layout_gravity="center"
+                    android:textColor="@color/black"/>
+
+                <TextView
+                    android:id="@+id/information_sex"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/small_font_size"
+                    android:layout_gravity="center"
+                    android:text="保密"
+                    android:layout_marginEnd="15dp"/>
+
+                <ImageView
+                    android:layout_width="15sp"
+                    android:layout_height="@dimen/common_font_size"
+                    android:layout_gravity="center"
+                    android:contentDescription="@string/my_about"
+                    app:srcCompat="@drawable/right" />
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/grey"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:paddingEnd="15dp"
+                tools:ignore="RtlSymmetry">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="手机号"
+                    android:textSize="@dimen/common_font_size"
+                    android:layout_marginStart="15dp"
+                    android:layout_gravity="center"
+                    android:textColor="@color/black"/>
+
+                <TextView
+                    android:id="@+id/information_phoneNumber"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/small_font_size"
+                    android:layout_gravity="center"
+                    android:text=""
+                    android:layout_marginEnd="15dp"/>
+
+                <ImageView
+                    android:layout_width="15sp"
+                    android:layout_height="@dimen/common_font_size"
+                    android:layout_gravity="center"
+                    android:contentDescription="@string/my_about"
+                    app:srcCompat="@drawable/right" />
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/grey"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:paddingEnd="15dp"
+                tools:ignore="RtlSymmetry">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="地址"
+                    android:textSize="@dimen/common_font_size"
+                    android:layout_marginStart="15dp"
+                    android:layout_gravity="center"
+                    android:textColor="@color/black"/>
+
+                <TextView
+                    android:id="@+id/information_address"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/small_font_size"
+                    android:layout_gravity="center"
+                    android:text="广东省，广州市，珠海区"
+                    android:layout_marginEnd="15dp"/>
+
+                <ImageView
+                    android:layout_width="15sp"
+                    android:layout_height="@dimen/common_font_size"
+                    android:layout_gravity="center"
+                    android:contentDescription="@string/my_about"
+                    app:srcCompat="@drawable/right" />
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/unload"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="退出登录"
+                android:textSize="@dimen/small_font_size"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+</LinearLayout>
