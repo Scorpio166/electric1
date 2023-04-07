@@ -15,7 +15,8 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:layout_marginBottom="20sp">
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -110,8 +111,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:paddingStart="10sp"
-                android:paddingEnd="10sp">
+                android:paddingStart="20sp"
+                android:paddingEnd="20sp">
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -141,6 +142,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
+                    android:layout_marginBottom="10sp"
                     android:background="@drawable/my_other_background">
                     <TextView
                         android:layout_width="match_parent"
@@ -153,12 +155,36 @@
                         android:layout_width="match_parent"
                         android:layout_height="380sp" />
                 </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginBottom="10sp"
+                    android:background="@drawable/my_other_background">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="月度用电情况"
+                        android:textSize="@dimen/common_font_size"
+                        android:layout_marginStart="5sp"/>
+
+                    <com.example.electric.Util.ChartView
+                        android:id="@+id/chartView"
+                        android:layout_width="match_parent"
+                        android:layout_height="380sp"
+                        android:layout_margin="10sp"
+                        app:interval="50dp"
+                        app:isScroll="false"
+                        app:linecolor="@color/purple_500"
+                        app:xylinecolor="@color/grey"
+                        app:xylinewidth="2sp"
+                        app:xytextcolor="@color/black"
+                        app:xytextsize="14sp" />
+                </LinearLayout>
 
             </LinearLayout>
 
         </LinearLayout>
     </ScrollView>
-
-
 
 </LinearLayout>

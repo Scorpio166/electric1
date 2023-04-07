@@ -12,7 +12,7 @@ import androidx.annotation.Nullable;
 
 import java.util.ArrayList;
 import java.util.List;
-
+//https://blog.csdn.net/qq_41008818/article/details/128472059?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522168083533316800215031288%2522%252C%2522scm%2522%253A%252220140713.130102334.pc%255Fall.%2522%257D&request_id=168083533316800215031288&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~first_rank_ecpm_v1~times_rank-1-128472059-null-null.142^v81^insert_down38,201^v4^add_ask,239^v2^insert_chatgpt&utm_term=android%20%E9%A5%BC%E5%9B%BE&spm=1018.2226.3001.4187
 public class PieChartView extends View {
 
     public PieChartView(Context context) {
