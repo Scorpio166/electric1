@@ -28,7 +28,6 @@ public class MyFragment extends Fragment {
         MyViewModel myViewModel = new ViewModelProvider(this).get(MyViewModel.class);
 
         binding = FragmentMyBinding.inflate(inflater, container, false);
-
         View root = binding.getRoot();
 //        final TextView textView = binding.textMy;
 //        myViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
