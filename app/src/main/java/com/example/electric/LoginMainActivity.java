@@ -184,7 +184,6 @@ public class LoginMainActivity extends AppCompatActivity implements View.OnClick
                         }
                     }
                     is.close();
-                    connection.disconnect();
                 }
                 countDownLatch.countDown();
 //                Log.i("LoginMainActivity", "countDownLatch:" + countDownLatch);

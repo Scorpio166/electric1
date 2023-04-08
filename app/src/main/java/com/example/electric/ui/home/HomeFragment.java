@@ -20,21 +20,13 @@ import java.util.Map;
 
 public class HomeFragment extends Fragment {
     private FragmentHomeBinding binding;
-    //折线图
-    //x轴坐标对应的数据
-    private List<String> xValue = new ArrayList<>();
-    //y轴坐标对应的数据
-    private List<Integer> yValue = new ArrayList<>();
-    //折线对应的数据
-    private Map<String, Integer> value = new HashMap<>();
-
-    public View onCreateView(@NonNull LayoutInflater inflater,
+        public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         HomeViewModel homeViewModel = new ViewModelProvider(this).get(HomeViewModel.class);
 
         binding = FragmentHomeBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
-
+//以下图片每次切换页面都会刷新
         //饼图
         List<Integer> pieChatDatas=new ArrayList<>();
         pieChatDatas.add(35);
@@ -49,21 +41,24 @@ public class HomeFragment extends Fragment {
         PieChartView pie_Chart= binding.pieChart;
         pie_Chart.setItemList(pieChatItems);
         pie_Chart.setData(pieChatDatas,"度");
-
-
         //折线图
+        //x轴坐标对应的数据
+        List<String> xValue = new ArrayList<>();
+        //y轴坐标对应的数据
+        List<Integer> yValue = new ArrayList<>();
+        //折线对应的数据
+        Map<String, Integer> value = new HashMap<>();
+
+        //折线图-月度用电
         for (int i = 0; i < 12; i++) {
             xValue.add((i + 5) % 12 + "月");
             value.put((i + 5) % 12 + "月", (int) (Math.random() * 141 + 60));//60--221
         }
-
         for (int i = 0; i < 6; i++) {
             yValue.add(i * 45);
         }
-
         ChartView chartView = binding.chartView;
         chartView.setValue(value, xValue, yValue);
-
 
         return root;
     }

@@ -47,23 +47,19 @@ public class MyViewModel  extends ViewModel {
         new Thread(() -> {
             try {
                 //new一个访问的url
-                URL url = new URL(baseurl + "device/list?id=" + user_id);
+                URL url = new URL(baseurl + "device/" + user_id);
                 Log.i("MyViewModel：", "url:" + url);
                 //创建HttpURLConnection 实例
                 HttpURLConnection connection = (HttpURLConnection) url.openConnection();
                 //提交数据的方式
-                connection.setRequestMethod("POST");
+                connection.setRequestMethod("GET");
                 connection.setRequestProperty("Cookie", "rememberMe=" + User.getRememberMe() +
                         "; JSESSIONID=" + User.getJSESSIONID());
-                connection.setDoInput(true);
-                connection.setDoOutput(true);
-                connection.setUseCaches(false);
                 //设置超时时间
                 connection.setConnectTimeout(8000);//连接超时
                 //读取超时
                 connection.setReadTimeout(8000);
 
-                connection.connect();
                 Log.d("MyViewModel", "DoDevice: " + connection.getResponseCode());
                 if (connection.getResponseCode() == 200) {
                     //接收服务器输入流信息
