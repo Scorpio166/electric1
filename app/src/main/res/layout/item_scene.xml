@@ -10,7 +10,6 @@
     android:paddingTop="8dp"
     android:paddingBottom="8dp"
     android:background="@color/background">
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -21,7 +20,7 @@
             android:id="@+id/deviceIcon"
             android:layout_width="60dp"
             android:layout_height="60dp"
-            app:srcCompat="@drawable/home"
+            app:srcCompat="@drawable/scene"
             android:layout_marginEnd="10dp" />
 
         <LinearLayout
@@ -33,9 +32,9 @@
                 android:id="@+id/deviceName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text=""
+                android:text="每日用电计划"
                 android:textSize="@dimen/common_font_size"
-                android:textColor="@color/black"/>
+                android:textColor="@color/purple_500"/>
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -43,26 +42,20 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="加入时间："
+                    android:text="创建时间："
                     android:textSize="@dimen/small_font_size"
-                    android:textColor="@color/black"/>
+                    android:textColor="@color/brown" />
                 <TextView
                     android:id="@+id/joinTime"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text=""
                     android:textSize="@dimen/small_font_size"
-                    android:textColor="@color/black"/>
+                    android:textColor="@color/brown"/>
 
             </LinearLayout>
 
-            <TextView
-                android:id="@+id/isOnline"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text=""
-                android:textSize="@dimen/small_font_size"
-                android:textColor="@color/brown"/>
+
 
 
         </LinearLayout>
@@ -71,11 +64,7 @@
             android:id="@+id/isOpen"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:showText="true"
-            android:textOn="ON"
-            android:textOff="OFF"
             android:layout_gravity="bottom"
             tools:ignore="HardcodedText,UseSwitchCompatOrMaterialXml" />
-
     </LinearLayout>
 </LinearLayout>
