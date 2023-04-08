@@ -3,7 +3,6 @@ package com.example.electric;
 
 //跳转页面
 
-
 import android.annotation.SuppressLint;
 import android.app.Dialog;
 import android.content.Context;
@@ -40,10 +39,10 @@ public class LoginMainActivity extends AppCompatActivity implements View.OnClick
     private EditText et_login_password;
 
     private CheckBox ck_remember;
-//    private final String baseurl = "https://app.ceravo.cn:443/wechat/";
+    //    private final String baseurl = "https://app.ceravo.cn:443/wechat/";
     private int login_code = -1;
     private SharedPreferences preferences;
-
+    private Dialog progressDialog;
     @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -82,7 +81,7 @@ public class LoginMainActivity extends AppCompatActivity implements View.OnClick
 
     @Override
     public void onClick(View v) {
-        Dialog progressDialog = new Dialog(LoginMainActivity.this, R.style.progress_dialog);
+        progressDialog = new Dialog(LoginMainActivity.this,R.style.progress_dialog);
         progressDialog.setContentView(R.layout.activity_loading);
         progressDialog.getWindow().setBackgroundDrawableResource(android.R.color.transparent);
         TextView msg = progressDialog.findViewById(R.id.dialog_loading_tipTextView);
@@ -99,20 +98,19 @@ public class LoginMainActivity extends AppCompatActivity implements View.OnClick
         new Thread(() -> {
             try {
                 //new一个访问的url
-                URL url = new URL(baseurl + "login?username=" + et_login_name.getText().toString() + "&password=" + et_login_password.getText().toString());
+                URL url = new URL(baseurl + "login?loginName=" + et_login_name.getText().toString() + "&password=" + et_login_password.getText().toString());
+
                 //创建HttpURLConnection 实例
                 HttpURLConnection connection = (HttpURLConnection) url.openConnection();
                 //提交数据的方式
-                connection.setRequestMethod("POST");
-                connection.setDoInput(true);
-                connection.setDoOutput(true);
-                connection.setUseCaches(false);
+                connection.setRequestMethod("GET");
+                connection.setRequestProperty("Cookie", "rememberMe=" + User.getRememberMe() +
+                        "; JSESSIONID=" + User.getJSESSIONID());
                 //设置超时时间
                 connection.setConnectTimeout(8000);//连接超时
                 //读取超时
                 connection.setReadTimeout(8000);
-                connection.connect();
-//                Log.i("LoginMainActivity：", "connection.getResponseCode():" + connection.getResponseCode());
+
                 if (connection.getResponseCode() == 200) {
                     //设置全局用户信息变量
                     User.setLogin_name(String.valueOf(et_login_name));
@@ -121,11 +119,11 @@ public class LoginMainActivity extends AppCompatActivity implements View.OnClick
                     BufferedReader br = new BufferedReader(new InputStreamReader(is));
                     //拿到信息
                     String result = br.readLine();
+                    Log.i("LoginMainActivity：", "返回数据:" + result);
                     JSONObject re = JSON.parseObject(result);
-//                    Log.i("LoginMainActivity：", "返回数据:" + result);
-//                    int i = 0;
+                    int i = 0;
                     for(String str:re.keySet()){
-//                        i++;
+                        i++;
 //                        Log.i(String.valueOf(i), str + ":" + re.get(str));
                         if(str.equals("code")){
                             login_code = Integer.parseInt(Objects.requireNonNull(re.get(str)).toString());
@@ -188,15 +186,9 @@ public class LoginMainActivity extends AppCompatActivity implements View.OnClick
                     is.close();
                     connection.disconnect();
                 }
-//                else{
-//                    Log.i("LoginMainActivity", "子线程访问失败");
-//                    connection.disconnect();
-//                }
-                connection.disconnect();
                 countDownLatch.countDown();
 //                Log.i("LoginMainActivity", "countDownLatch:" + countDownLatch);
             } catch (Exception e) {
-                Log.i("LoginMainActivity", "子线程访问失败");
                 e.printStackTrace();
             }
 //            Log.i("LoginMainActivity", "子线程退出");
