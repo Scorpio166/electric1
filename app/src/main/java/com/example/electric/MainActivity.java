@@ -45,11 +45,15 @@ public class MainActivity extends AppCompatActivity {
         //NotificationsFragment 适配器设置
         CommonVariables.noticeAdapter = new MyNoticeAdapter(this);
         CommonVariables.noticeList = new ArrayList<>();
-        //初始化数据
+        CommonVariables.noticedAdapter = new MyNoticeAdapter(this);
+        CommonVariables.noticedList = new ArrayList<>();
+        //初始化noticeList数据
         for (int i = 0; i < 10; i++) {
-            CommonVariables.noticeList.add(new Notice("姓名" + i, "时间：" + i, "类型" + i));
+            CommonVariables.noticeList.add(new Notice("姓名" + i, "时间：" + i, "类型" + i, 0));
         }
-
+        for (int i = 100; i < 110; i++) {
+            CommonVariables.noticedList.add(new Notice("姓名" + i, "时间：" + i, "类型" + i, 0));
+        }
     }
 
     public void onClick_my_account(View view) {

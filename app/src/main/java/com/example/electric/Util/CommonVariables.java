@@ -15,8 +15,10 @@ public class CommonVariables extends Application {
     public static List<Device> deviceList;
     public static List<Scene> sceneList;
     public static List<Notice> noticeList;
+    public static List<Notice> noticedList;
 
     public static MyNoticeAdapter noticeAdapter;
+    public static MyNoticeAdapter noticedAdapter;
 
     public void onCreate() {
         super.onCreate();

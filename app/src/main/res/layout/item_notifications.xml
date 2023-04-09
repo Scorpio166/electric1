@@ -1,114 +1,74 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="horizontal"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginTop="5sp"
-    android:layout_marginBottom="5sp"
-    android:paddingTop="10sp"
-    android:paddingBottom="10sp"
-    android:background="@color/brown">
-    <TextView
-        android:id="@+id/name"
-        android:layout_weight="1"
-        android:layout_width="wrap_content"
+    android:background="@color/background"
+    android:orientation="vertical"
+    >
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center"
-        android:textSize="20dp"
-        android:text="姓名"/>
-    <TextView
-        android:id="@+id/time"
-        android:layout_weight="1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:textSize="20dp"
-        android:text="时间"/>
-    <TextView
-        android:id="@+id/type"
-        android:layout_weight="1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:textSize="20dp"
-        android:text="类型"/>
-</LinearLayout>
+        android:orientation="horizontal"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp">
+
+        <ImageView
+            android:id="@+id/deviceIcon"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginEnd="20dp"
+            app:srcCompat="@drawable/warning" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textColor="@color/black"
+                android:textSize="@dimen/common_font_size" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="加入时间："
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/small_font_size" />
+
+                <TextView
+                    android:id="@+id/time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/small_font_size" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/type"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textColor="@color/brown"
+                android:textSize="@dimen/small_font_size" />
 
 
-
-
-    <!--<?xml version="1.0" encoding="utf-8"?>-->
-<!--<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
-<!--    xmlns:app="http://schemas.android.com/apk/res-auto"-->
-<!--    xmlns:tools="http://schemas.android.com/tools"-->
-<!--    android:layout_width="match_parent"-->
-<!--    android:layout_height="wrap_content"-->
-<!--    android:background="@color/background"-->
-<!--    android:orientation="vertical"-->
-<!--    android:paddingStart="10dp"-->
-<!--    android:paddingTop="8dp"-->
-<!--    android:paddingEnd="10dp"-->
-<!--    android:paddingBottom="8dp">-->
-<!--    <LinearLayout-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:orientation="horizontal"-->
-<!--        android:paddingTop="5dp"-->
-<!--        android:paddingBottom="5dp">-->
-
-<!--        <ImageView-->
-<!--            android:id="@+id/deviceIcon"-->
-<!--            android:layout_width="60dp"-->
-<!--            android:layout_height="60dp"-->
-<!--            android:layout_marginEnd="10dp"-->
-<!--            app:srcCompat="@drawable/warning" />-->
-
-<!--        <LinearLayout-->
-<!--            android:layout_width="0dp"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_weight="1"-->
-<!--            android:orientation="vertical">-->
-
-<!--            <TextView-->
-<!--                android:id="@+id/deviceName"-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:text=""-->
-<!--                android:textColor="@color/black"-->
-<!--                android:textSize="@dimen/common_font_size" />-->
-
-<!--            <LinearLayout-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:orientation="horizontal">-->
-
-<!--                <TextView-->
-<!--                    android:layout_width="wrap_content"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:text="加入时间："-->
-<!--                    android:textColor="@color/black"-->
-<!--                    android:textSize="@dimen/small_font_size" />-->
-
-<!--                <TextView-->
-<!--                    android:id="@+id/joinTime"-->
-<!--                    android:layout_width="wrap_content"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:text=""-->
-<!--                    android:textColor="@color/black"-->
-<!--                    android:textSize="@dimen/small_font_size" />-->
-
-<!--            </LinearLayout>-->
-
-<!--            <TextView-->
-<!--                android:id="@+id/isOnline"-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:text=""-->
-<!--                android:textColor="@color/brown"-->
-<!--                android:textSize="@dimen/small_font_size" />-->
-
-
-<!--        </LinearLayout>-->
+        </LinearLayout>
 
 <!--        <Switch-->
 <!--            android:id="@+id/isOpen"-->
@@ -118,5 +78,43 @@
 <!--            android:showText="true"-->
 <!--            tools:ignore="HardcodedText,UseSwitchCompatOrMaterialXml" />-->
 
-<!--    </LinearLayout>-->
-<!--</LinearLayout>-->
+    </LinearLayout>
+</LinearLayout>
+
+    <!--<?xml version="1.0" encoding="utf-8"?>-->
+    <!--<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+    <!--    android:orientation="horizontal"-->
+    <!--    android:layout_width="match_parent"-->
+    <!--    android:layout_height="wrap_content"-->
+    <!--    android:layout_marginTop="5sp"-->
+    <!--    android:layout_marginBottom="5sp"-->
+    <!--    android:paddingTop="10sp"-->
+    <!--    android:paddingBottom="10sp"-->
+    <!--    android:background="@color/brown">-->
+    <!--    <TextView-->
+    <!--        android:id="@+id/name"-->
+    <!--        android:layout_weight="1"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:gravity="center"-->
+    <!--        android:textSize="20dp"-->
+    <!--        android:text="姓名"/>-->
+    <!--    <TextView-->
+    <!--        android:id="@+id/time"-->
+    <!--        android:layout_weight="1"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:gravity="center"-->
+    <!--        android:textSize="20dp"-->
+    <!--        android:text="时间"/>-->
+    <!--    <TextView-->
+    <!--        android:id="@+id/type"-->
+    <!--        android:layout_weight="1"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:gravity="center"-->
+    <!--        android:textSize="20dp"-->
+    <!--        android:text="类型"/>-->
+    <!--    -->
+    <!--    -->
+    <!--</LinearLayout>-->
