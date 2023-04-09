@@ -36,7 +36,8 @@ public class MyDeviceAdapter  extends BaseAdapter {
     // 获取列表项的个数
     @Override
     public int getCount() {
-        return CommonVariables.deviceList.size();
+        if(CommonVariables.deviceList == null) return 0;
+        else return CommonVariables.deviceList.size();
     }
 
     @Override

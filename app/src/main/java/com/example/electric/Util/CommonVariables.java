@@ -1,8 +1,10 @@
 package com.example.electric.Util;
 import android.app.Application;
 
+import com.example.electric.adapter.MyNoticeAdapter;
 import com.example.electric.entity.Device;
 import com.example.electric.entity.Family;
+import com.example.electric.entity.Notice;
 import com.example.electric.entity.Scene;
 
 import java.util.List;
@@ -12,6 +14,9 @@ public class CommonVariables extends Application {
     public static List<Family> roomList;
     public static List<Device> deviceList;
     public static List<Scene> sceneList;
+    public static List<Notice> noticeList;
+
+    public static MyNoticeAdapter noticeAdapter;
 
     public void onCreate() {
         super.onCreate();

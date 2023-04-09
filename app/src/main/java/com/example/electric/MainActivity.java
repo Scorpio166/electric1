@@ -7,7 +7,10 @@ import android.view.View;
 import com.example.electric.My.MyAccountActivity;
 import com.example.electric.My.MyDeviceActivity;
 import com.example.electric.My.MyFamilyActivity;
+import com.example.electric.Util.CommonVariables;
+import com.example.electric.adapter.MyNoticeAdapter;
 import com.example.electric.databinding.ActivityMainBinding;
+import com.example.electric.entity.Notice;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -16,6 +19,7 @@ import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
+import java.util.ArrayList;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -33,18 +37,18 @@ public class MainActivity extends AppCompatActivity {
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.navigation_home, R.id.navigation_dashboard,
-                R.id.navigation_notifications, R.id.navigation_my)
-                .build();
+                R.id.navigation_home, R.id.navigation_dashboard, R.id.navigation_notifications, R.id.navigation_my).build();
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_activity_main);
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(binding.navView, navController);
 
-
-
-
-
-
+        //NotificationsFragment 适配器设置
+        CommonVariables.noticeAdapter = new MyNoticeAdapter(this);
+        CommonVariables.noticeList = new ArrayList<>();
+        //初始化数据
+        for (int i = 0; i < 10; i++) {
+            CommonVariables.noticeList.add(new Notice("姓名" + i, "时间：" + i, "类型" + i));
+        }
 
     }
 
