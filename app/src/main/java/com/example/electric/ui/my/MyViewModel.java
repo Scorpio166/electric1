@@ -48,7 +48,7 @@ public class MyViewModel  extends ViewModel {
             try {
                 //new一个访问的url
                 URL url = new URL(baseurl + "device/" + user_id);
-                Log.i("MyViewModel：", "url:" + url);
+//                Log.i("MyViewModel：", "url:" + url);
                 //创建HttpURLConnection 实例
                 HttpURLConnection connection = (HttpURLConnection) url.openConnection();
                 //提交数据的方式
@@ -60,20 +60,20 @@ public class MyViewModel  extends ViewModel {
                 //读取超时
                 connection.setReadTimeout(8000);
 
-                Log.d("MyViewModel", "DoDevice: " + connection.getResponseCode());
+//                Log.d("MyViewModel", "DoDevice: " + connection.getResponseCode());
                 if (connection.getResponseCode() == 200) {
                     //接收服务器输入流信息
                     InputStream is = connection.getInputStream();
                     BufferedReader br = new BufferedReader(new InputStreamReader(is));
                     //拿到信息
                     String result = br.readLine();
-                    Log.i("MyViewModel：", "DoDevice返回数据:" + result);
+//                    Log.i("MyViewModel：", "DoDevice返回数据:  " + result);
                     JSONObject re = JSON.parseObject(result);
                     for(String str:re.keySet()){
                         if(str.equals("data")){
                             JSONObject jsonObject = JSONObject.parseObject(Objects.requireNonNull(re.get(str)).toString());
                             String deviceStr = jsonObject.getString("device");
-                            Log.i("MyViewModel：", "data:" + deviceStr);
+                            Log.i("MyViewModel：", "DoDevice返回data:   " + deviceStr);
                             CommonVariables.deviceList = JSONObject.parseArray(deviceStr, Device.class);
                         }
                     }
@@ -114,12 +114,12 @@ public class MyViewModel  extends ViewModel {
                     //拿到信息
                     String result = br.readLine();
                     JSONObject re = JSON.parseObject(result);
-                    Log.i("MyViewModel：", "DoRoomGroup 返回数据:" + result);
+//                    Log.i("MyViewModel：", "DoRoomGroup 返回数据:  " + result);
                     for(String str:re.keySet()){
                         if(str.equals("data")){
                             JSONObject jsonObject = JSONObject.parseObject(Objects.requireNonNull(re.get(str)).toString());
                             String roomStr = jsonObject.getString("room");
-//                            Log.i("MyViewModel：", "roomStr data:" + roomStr);
+                            Log.i("MyViewModel：", "DoRoomGroup 返回data:   " + roomStr);
                             CommonVariables.roomList = JSONObject.parseArray(roomStr, Family.class);
                         }
                     }

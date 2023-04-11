@@ -7,6 +7,7 @@ import android.view.View;
 import com.example.electric.My.MyAccountActivity;
 import com.example.electric.My.MyDeviceActivity;
 import com.example.electric.My.MyFamilyActivity;
+import com.example.electric.My.MyMessageActivity;
 import com.example.electric.Util.CommonVariables;
 import com.example.electric.adapter.MyNoticeAdapter;
 import com.example.electric.databinding.ActivityMainBinding;
@@ -68,6 +69,10 @@ public class MainActivity extends AppCompatActivity {
 
     public void onClick_my_device(View view) {
         Intent intent = new Intent(MainActivity.this, MyDeviceActivity.class);
+        startActivity(intent);
+    }
+    public void onClick_message(View view) {
+        Intent intent = new Intent(MainActivity.this, MyMessageActivity.class);
         startActivity(intent);
     }
 }

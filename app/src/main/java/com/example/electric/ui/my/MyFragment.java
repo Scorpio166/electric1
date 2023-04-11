@@ -55,5 +55,4 @@ public class MyFragment extends Fragment {
         super.onDestroyView();
         binding = null;
     }
-
 }

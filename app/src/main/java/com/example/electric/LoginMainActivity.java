@@ -119,7 +119,7 @@ public class LoginMainActivity extends AppCompatActivity implements View.OnClick
                     BufferedReader br = new BufferedReader(new InputStreamReader(is));
                     //拿到信息
                     String result = br.readLine();
-                    Log.i("LoginMainActivity：", "返回数据:" + result);
+//                    Log.i("LoginMainActivity：", "返回数据:" + result);
                     JSONObject re = JSON.parseObject(result);
                     int i = 0;
                     for(String str:re.keySet()){

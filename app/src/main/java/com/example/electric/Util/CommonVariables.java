@@ -4,6 +4,7 @@ import android.app.Application;
 import com.example.electric.adapter.MyNoticeAdapter;
 import com.example.electric.entity.Device;
 import com.example.electric.entity.Family;
+import com.example.electric.entity.Message;
 import com.example.electric.entity.Notice;
 import com.example.electric.entity.Scene;
 
@@ -16,6 +17,7 @@ public class CommonVariables extends Application {
     public static List<Scene> sceneList;
     public static List<Notice> noticeList;
     public static List<Notice> noticedList;
+    public static List<Message> messageList;
 
     public static MyNoticeAdapter noticeAdapter;
     public static MyNoticeAdapter noticedAdapter;

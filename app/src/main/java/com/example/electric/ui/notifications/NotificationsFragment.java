@@ -53,7 +53,7 @@ public class NotificationsFragment extends Fragment {
         ListView listedView = binding.listed;
         TextView textTip2 = binding.textTip2;
         listedView.setAdapter(CommonVariables.noticedAdapter);
-        Log.i("NotificationsFragment", "onCreateView: ");
+//        Log.i("NotificationsFragment", "onCreateView: ");
         listedView.setEmptyView(textTip2);//设置当ListView为空的时候显示text_tip "暂无数据"
         listedView.setOnItemClickListener(new AdapterView.OnItemClickListener(){
             @Override
