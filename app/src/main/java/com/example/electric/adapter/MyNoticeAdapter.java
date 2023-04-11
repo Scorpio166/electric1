@@ -12,19 +12,26 @@ import com.example.electric.entity.Notice;
 
 public class MyNoticeAdapter extends BaseAdapter {
     private final Context mContext;
-
-    public MyNoticeAdapter(Context mContext) {
+    private final int flaged;//0表示应该使用noticeList，1表示应该使用noticedList
+    public MyNoticeAdapter(Context mContext, int flaged) {
         this.mContext = mContext;
+        this.flaged = flaged;
     }
     @Override
     public int getCount() {
-        if(CommonVariables.noticeList == null) return 0;
-        else return CommonVariables.noticeList.size();
+        if(flaged == 0){
+            if(CommonVariables.noticeList == null) return 0;
+            else return CommonVariables.noticeList.size();
+        }else{
+            if(CommonVariables.noticedList == null) return 0;
+            else return CommonVariables.noticedList.size();
+        }
     }
 
     @Override
     public Object getItem(int i) {
-        return CommonVariables.noticeList.get(i);
+        if(flaged == 0) return CommonVariables.noticeList.get(i);
+        else return CommonVariables.noticedList.get(i);
     }
 
     @Override
@@ -45,7 +52,12 @@ public class MyNoticeAdapter extends BaseAdapter {
         } else {
             viewHoder = (ViewHoder) convertView.getTag();
         }
-        Notice notice = CommonVariables.noticeList.get(position);
+        Notice notice;
+        if(flaged == 0){
+            notice = CommonVariables.noticeList.get(position);
+        }else{
+            notice = CommonVariables.noticedList.get(position);
+        }
         viewHoder.name.setText(notice.getName());
         viewHoder.time.setText(notice.getTime());
         viewHoder.type.setText(notice.getType());
