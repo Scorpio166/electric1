@@ -37,7 +37,6 @@ public class MyFamilyActivity extends AppCompatActivity implements AdapterView.O
     public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
         Intent intent = new Intent(this, ManageFamily.class);
         intent.putExtra("id", i);
-//        Log.d("MyFamilyActivity", "onItemClick: " + i);
         startActivity(intent);
     }
 }

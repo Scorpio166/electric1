@@ -12,32 +12,27 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.ViewModelProvider;
 
-import com.example.electric.MainActivity;
 import com.example.electric.Notice.NoticeInActivity;
 import com.example.electric.Util.CommonVariables;
-import com.example.electric.adapter.MyNoticeAdapter;
 import com.example.electric.databinding.FragmentNotificationsBinding;
-import com.example.electric.entity.Notice;
 
-import java.util.ArrayList;
-import java.util.List;
 
 public class NotificationsFragment extends Fragment {
     private FragmentNotificationsBinding binding;
-
+    private TextView warning;
+    private TextView warned;
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         binding = FragmentNotificationsBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-        TextView warning = binding.warning;
-        TextView warned = binding.warned;
-        if(CommonVariables.noticeList == null) warning.setText("待处理告警：0");
-        else warning.setText("待处理告警：" + CommonVariables.noticeList.size());
-        if(CommonVariables.noticedList == null) warned.setText("已处理告警：0");
-        else warned.setText("已处理告警：" + CommonVariables.noticedList.size());
+        warning = binding.warning;
+        warned = binding.warned;
+        if(CommonVariables.noticeList == null) warning.setText("0");
+        else warning.setText("" + CommonVariables.noticeList.size());
+        if(CommonVariables.noticedList == null) warned.setText("0");
+        else warned.setText("" + CommonVariables.noticedList.size());
 
         ListView listView = binding.list;
         TextView textTip = binding.textTip;
@@ -70,6 +65,15 @@ public class NotificationsFragment extends Fragment {
             }
         });
         return root;
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        if(CommonVariables.noticeList == null) warning.setText("0");
+        else warning.setText("" + CommonVariables.noticeList.size());
+        if(CommonVariables.noticedList == null) warned.setText("0");
+        else warned.setText("" + CommonVariables.noticedList.size());
     }
 
     @Override
