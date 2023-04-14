@@ -15,6 +15,7 @@ import android.widget.TextView;
 import com.example.electric.R;
 import com.example.electric.Util.CommonVariables;
 import com.example.electric.entity.Notice;
+import com.example.electric.ui.notifications.NotificationsFragment;
 
 import java.util.List;
 
@@ -104,6 +105,7 @@ public class NoticeInActivity extends AppCompatActivity {
                     //在noticeList中删除
                     CommonVariables.noticedList.remove(id);
                     CommonVariables.noticedAdapter.notifyDataSetChanged();//在在noticeList删除数据的时候 记得要刷新适配器
+
                     finish();
                 }
             }).setNegativeButton("取消",new DialogInterface.OnClickListener() {

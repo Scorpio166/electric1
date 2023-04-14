@@ -16,6 +16,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.electric.LoginMainActivity;
 import com.example.electric.MainActivity;
+import com.example.electric.My.Account.ModifyAddressActivity;
 import com.example.electric.R;
 import com.example.electric.Util.User;
 import com.example.electric.Util.ViewUtil;
@@ -68,6 +69,10 @@ public class MyAccountActivity extends AppCompatActivity {
             AlertDialog.Builder builder = new AlertDialog.Builder(this);// 自定义对话框
             builder.setMessage("尚未完善");
             builder.show();// 让弹出框显示
+
+//            Intent intent = new Intent(MyAccountActivity.this, ModifyAddressActivity.class);
+//            startActivity(intent);
+
         });
 
         TextView information_sex = findViewById(R.id.information_sex);

@@ -32,6 +32,13 @@ public class NotificationsFragment extends Fragment {
         binding = FragmentNotificationsBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
+        TextView warning = binding.warning;
+        TextView warned = binding.warned;
+        if(CommonVariables.noticeList == null) warning.setText("待处理告警：0");
+        else warning.setText("待处理告警：" + CommonVariables.noticeList.size());
+        if(CommonVariables.noticedList == null) warned.setText("已处理告警：0");
+        else warned.setText("已处理告警：" + CommonVariables.noticedList.size());
+
         ListView listView = binding.list;
         TextView textTip = binding.textTip;
 
@@ -44,8 +51,6 @@ public class NotificationsFragment extends Fragment {
                 intent.putExtra("id", position);
                 intent.putExtra("flag", 0);
                 startActivity(intent);
-//                CommonVariables.noticeList.remove(position);
-//                CommonVariables.noticeAdapter.notifyDataSetChanged();//在list删除数据的时候 记得要刷新适配器（）
             }
         });
 
