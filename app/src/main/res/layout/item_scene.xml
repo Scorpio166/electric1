@@ -9,7 +9,7 @@
     android:paddingEnd="10dp"
     android:paddingTop="8dp"
     android:paddingBottom="8dp"
-    android:background="@color/background">
+    android:background="?android:attr/selectableItemBackground">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

@@ -12,14 +12,16 @@
         android:layout_height="wrap_content"
         android:text="家庭信息"
         android:textSize="@dimen/large_font_size"
-        android:layout_marginStart="5dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginBottom="5dp"/>
+        android:background="@drawable/my_other_background"
+        android:paddingStart="5dp"
+        android:paddingEnd="5dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="5dp"/>
     <LinearLayout
         android:id="@+id/family_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/my_other_background"
+        android:background="?android:attr/selectableItemBackground"
         android:clickable="true"
         android:orientation="horizontal"
         android:paddingTop="13dp"
@@ -34,6 +36,7 @@
             android:textSize="@dimen/common_font_size"/>
         <TextView
             android:id="@+id/familyName"
+            android:clickable="true"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="15dp"
@@ -51,7 +54,7 @@
         android:id="@+id/family_address"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/my_other_background"
+        android:background="?android:attr/selectableItemBackground"
         android:clickable="true"
         android:orientation="horizontal"
         android:paddingTop="13dp"
@@ -75,16 +78,42 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="家庭成员"
+        android:text="绑定设备管理"
         android:textSize="@dimen/large_font_size"
-        android:layout_marginStart="5dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginBottom="5dp"/>
+        android:background="@drawable/my_other_background"
+        android:paddingStart="5dp"
+        android:paddingEnd="5dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="5dp"/>
+    <TextView
+        android:id="@+id/manageDevice"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?android:attr/selectableItemBackground"
+        android:clickable="true"
+        android:text="查看关联设备"
+        android:paddingStart="15dp"
+        android:paddingTop="13dp"
+        android:paddingBottom="13dp"
+        android:textColor="@color/teal_200"
+        android:textSize="@dimen/common_font_size"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="家庭成员"
+        android:background="@drawable/my_other_background"
+        android:textSize="@dimen/large_font_size"
+        android:paddingStart="5dp"
+        android:paddingEnd="5dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="5dp"/>
 
     <ListView
         android:layout_width="match_parent"
         android:id="@+id/liner"
-        android:layout_height="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
         android:orientation="vertical" />
     <TextView
         android:id="@+id/textTip"
@@ -94,5 +123,12 @@
         android:layout_marginTop="50sp"
         android:text="快快邀请成员加入吧!"
         android:textSize="@dimen/small_font_size"/>
+    <Button
+        android:id="@+id/delete"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="删除此家庭"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"/>
 
 </LinearLayout>

@@ -6,6 +6,7 @@ import com.example.electric.entity.Device;
 import com.example.electric.entity.Family;
 import com.example.electric.entity.Message;
 import com.example.electric.entity.Notice;
+import com.example.electric.entity.RoomUser;
 import com.example.electric.entity.Scene;
 
 import java.util.List;
@@ -18,6 +19,7 @@ public class CommonVariables extends Application {
     public static List<Notice> noticeList;
     public static List<Notice> noticedList;
     public static List<Message> messageList;
+    public static List<RoomUser> roomUserList;
 
     public static MyNoticeAdapter noticeAdapter;
     public static MyNoticeAdapter noticedAdapter;

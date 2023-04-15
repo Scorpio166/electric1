@@ -1,36 +1,33 @@
 package com.example.electric.My.Family;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
-
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.example.electric.R;
 import com.example.electric.Util.CommonVariables;
 import com.example.electric.Util.User;
-import com.example.electric.adapter.MyDeviceAdapter;
 import com.example.electric.adapter.RoomUserAdapter;
-import com.example.electric.entity.Device;
 import com.example.electric.entity.RoomUser;
-
 import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
-import java.util.List;
 import java.util.Objects;
 import java.util.concurrent.CountDownLatch;
 
-public class ManageFamily extends AppCompatActivity {
+public class ManageFamily extends AppCompatActivity implements View.OnClickListener {
     private  int position;
-    private List<RoomUser> roomUserList;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,16 +37,31 @@ public class ManageFamily extends AppCompatActivity {
         TextView familyAddress = findViewById(R.id.familyAddress);
         familyName.setText(CommonVariables.roomList.get(position).getRoomName());
         familyAddress.setText(CommonVariables.roomList.get(position).getRoomAddress());
+        familyName.setOnClickListener(this);
+        familyAddress.setOnClickListener(this);
         InitRoomUserList();
 
         ListView listView = findViewById(R.id.liner);
         TextView textTip = findViewById(R.id.textTip);
-        if(roomUserList == null){
-            listView.setEmptyView(textTip);
-        }else {
-            RoomUserAdapter adapter = new RoomUserAdapter(this, roomUserList);
-            listView.setAdapter(adapter);
-        }
+        RoomUserAdapter adapter = new RoomUserAdapter(this, CommonVariables.roomUserList);
+        listView.setAdapter(adapter);
+        listView.setEmptyView(textTip);
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener(){
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
+                Intent intent = new Intent(ManageFamily.this, ManageUserInRoomActivity.class);
+                intent.putExtra("userName", CommonVariables.roomUserList.get(position).getUserName());
+                intent.putExtra("userId", CommonVariables.roomUserList.get(position).getUserId());
+                startActivity(intent);
+            }
+        });
+
+        TextView manageDevice = findViewById(R.id.manageDevice);
+        manageDevice.setOnClickListener(this);
+
+        Button delete = findViewById(R.id.delete);
+        delete.setOnClickListener(this);
     }
     private void InitRoomUserList(){
         CountDownLatch countDownLatch;
@@ -74,7 +86,7 @@ public class ManageFamily extends AppCompatActivity {
                             JSONObject jsonObject = JSONObject.parseObject(Objects.requireNonNull(re.get(str)).toString());
                             String roomUserStr = jsonObject.getString("user");
                             Log.i("ManageFamily：", "InitRoomUserList返回data:   " + roomUserStr);
-                            roomUserList = JSONObject.parseArray(roomUserStr, RoomUser.class);
+                            CommonVariables.roomUserList = JSONObject.parseArray(roomUserStr, RoomUser.class);
                         }
                     }
                 }
@@ -90,4 +102,39 @@ public class ManageFamily extends AppCompatActivity {
         }
     }
 
+    @Override
+    public void onClick(View view) {
+        if(view == findViewById(R.id.manageDevice)){
+            Intent intent = new Intent(ManageFamily.this, ManageDeviceInRoomActivity.class);
+            intent.putExtra("position", position);
+            startActivity(intent);
+        }else if(view == findViewById(R.id.delete)){
+            openDialog("是否确认删除此家庭","此操作不可恢复！");
+        }else if(view == findViewById(R.id.familyName) || view == findViewById(R.id.familyAddress)){
+            Intent intent = new Intent(ManageFamily.this, ModifyRoomNameActivity.class);
+            intent.putExtra("position", position);
+            startActivity(intent);
+        }
+    }
+
+    //弹出对话框--------------------------------------------------
+    private void openDialog(String strMsg, String strTitle){
+        new AlertDialog.Builder(this).setTitle(strTitle).setMessage(strMsg).setPositiveButton("确认", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                deleteRoom(CommonVariables.roomList.get(position).getRoomId());
+            }
+        }).setNegativeButton("取消",new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+
+            }
+        }).setCancelable(false).show();
+    }
+
+    private void deleteRoom(int roomId){
+        AlertDialog.Builder builder = new AlertDialog.Builder(ManageFamily.this);// 自定义对话框
+        builder.setMessage("暂未开通此功能！");
+        builder.show();// 让弹出框显示
+    }
 }

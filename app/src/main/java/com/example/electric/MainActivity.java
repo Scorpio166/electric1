@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+import com.example.electric.My.Family.ManageDeviceInRoomActivity;
 import com.example.electric.My.MyAccountActivity;
 import com.example.electric.My.MyDeviceActivity;
 import com.example.electric.My.MyFamilyActivity;
