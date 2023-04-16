@@ -19,22 +19,33 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".My.Device.DeviceInRoomActivity"
+            android:exported="false"
+            android:label="查看设备">>
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".My.Family.ModifyRoomNameActivity"
-            android:exported="false">
+            android:exported="false"
+            android:label="修改家庭信息">>
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
             android:name=".My.Family.ManageUserInRoomActivity"
-            android:exported="false">
+            android:exported="false"
+            android:label="管理家庭用户">>
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
             android:name=".My.Family.ManageDeviceInRoomActivity"
-            android:exported="false">
+            android:exported="false"
+            android:label="管理家庭设备">>
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -64,7 +75,8 @@
         </activity>
         <activity
             android:name=".My.Family.ManageFamily"
-            android:exported="false">
+            android:exported="false"
+            android:label="管理家庭信息">>
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />

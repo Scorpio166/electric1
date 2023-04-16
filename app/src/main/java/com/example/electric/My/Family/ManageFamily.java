@@ -52,6 +52,7 @@ public class ManageFamily extends AppCompatActivity implements View.OnClickListe
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
                 Intent intent = new Intent(ManageFamily.this, ManageUserInRoomActivity.class);
                 intent.putExtra("userName", CommonVariables.roomUserList.get(position).getUserName());
+                intent.putExtra("createTime", CommonVariables.roomUserList.get(position).getCreateTime());
                 intent.putExtra("userId", CommonVariables.roomUserList.get(position).getUserId());
                 startActivity(intent);
             }
@@ -109,7 +110,7 @@ public class ManageFamily extends AppCompatActivity implements View.OnClickListe
             intent.putExtra("position", position);
             startActivity(intent);
         }else if(view == findViewById(R.id.delete)){
-            openDialog("是否确认删除此家庭","此操作不可恢复！");
+            openDialog("是否确认删除此家庭？","此操作不可恢复！");
         }else if(view == findViewById(R.id.familyName) || view == findViewById(R.id.familyAddress)){
             Intent intent = new Intent(ManageFamily.this, ModifyRoomNameActivity.class);
             intent.putExtra("position", position);

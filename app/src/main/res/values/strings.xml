@@ -24,7 +24,7 @@
 
     <string name="title_activity_main">MainActivity</string>
     <string name="title_home">主页</string>
-    <string name="title_dashboard">计划</string>
+    <string name="title_dashboard">管理</string>
     <string name="title_notifications">告警</string>
     <string name="title_my">我</string>
     <string name="sure">确定</string>
