@@ -19,9 +19,34 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".Add.AddDeviceInRoomActivity"
+            android:exported="false"
+            android:label="添加设备">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".Add.AddUserInRoomActivity"
+            android:exported="false"
+            android:label="邀请成员">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".Add.AddFamilyActivity"
+            android:exported="false"
+            android:label="新建家庭">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".My.Device.DeviceInRoomActivity"
             android:exported="false"
-            android:label="查看设备">>
+            android:label="查看设备">
+            >
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -29,7 +54,8 @@
         <activity
             android:name=".My.Family.ModifyRoomNameActivity"
             android:exported="false"
-            android:label="修改家庭信息">>
+            android:label="修改家庭信息">
+            >
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -37,7 +63,8 @@
         <activity
             android:name=".My.Family.ManageUserInRoomActivity"
             android:exported="false"
-            android:label="管理家庭用户">>
+            android:label="管理家庭用户">
+            >
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -45,7 +72,8 @@
         <activity
             android:name=".My.Family.ManageDeviceInRoomActivity"
             android:exported="false"
-            android:label="管理家庭设备">>
+            android:label="管理家庭设备">
+            >
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -76,7 +104,8 @@
         <activity
             android:name=".My.Family.ManageFamily"
             android:exported="false"
-            android:label="管理家庭信息">>
+            android:label="管理家庭信息">
+            >
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />

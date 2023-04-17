@@ -13,6 +13,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
+import com.example.electric.Add.AddUserInRoomActivity;
 import com.example.electric.R;
 import com.example.electric.Util.CommonVariables;
 import com.example.electric.Util.User;
@@ -63,6 +64,8 @@ public class ManageFamily extends AppCompatActivity implements View.OnClickListe
 
         Button delete = findViewById(R.id.delete);
         delete.setOnClickListener(this);
+
+        findViewById(R.id.addNewButton).setOnClickListener(this);
     }
     private void InitRoomUserList(){
         CountDownLatch countDownLatch;
@@ -113,6 +116,10 @@ public class ManageFamily extends AppCompatActivity implements View.OnClickListe
             openDialog("是否确认删除此家庭？","此操作不可恢复！");
         }else if(view == findViewById(R.id.familyName) || view == findViewById(R.id.familyAddress)){
             Intent intent = new Intent(ManageFamily.this, ModifyRoomNameActivity.class);
+            intent.putExtra("position", position);
+            startActivity(intent);
+        }else if(view == findViewById(R.id.addNewButton)){
+            Intent intent = new Intent(ManageFamily.this, AddUserInRoomActivity.class);
             intent.putExtra("position", position);
             startActivity(intent);
         }

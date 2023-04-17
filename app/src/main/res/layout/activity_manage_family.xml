@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,128 +7,146 @@
     android:orientation="vertical"
     android:background="@color/background"
     tools:context=".My.Family.ManageFamily">
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="家庭信息"
-        android:textSize="@dimen/large_font_size"
-        android:background="@drawable/my_other_background"
-        android:paddingStart="5dp"
-        android:paddingEnd="5dp"
-        android:paddingTop="10dp"
-        android:paddingBottom="5dp"/>
     <LinearLayout
-        android:id="@+id/family_name"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="?android:attr/selectableItemBackground"
-        android:clickable="true"
-        android:orientation="horizontal"
-        android:paddingTop="13dp"
-        android:paddingBottom="13dp"
-        android:paddingStart="15dp"
-        android:paddingEnd="15dp">
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@color/background">
         <TextView
-            android:layout_width="80sp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="家庭名称:"
-            android:textColor="#6E6E6E"
-            android:textSize="@dimen/common_font_size"/>
-        <TextView
-            android:id="@+id/familyName"
+            android:text="家庭信息"
+            android:textSize="@dimen/large_font_size"
+            android:background="@drawable/my_other_background"
+            android:paddingStart="5dp"
+            android:paddingEnd="5dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="5dp"/>
+        <LinearLayout
+            android:id="@+id/family_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?android:attr/selectableItemBackground"
             android:clickable="true"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="15dp"
-            android:layout_weight="1"
-            android:textColor="#6E6E6E"
-            android:textSize="@dimen/common_font_size"/>
-    </LinearLayout>
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:layout_marginStart="5dp"
-        android:layout_marginEnd="5dp"
-        android:background="@color/grey" />
-    <LinearLayout
-        android:id="@+id/family_address"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="?android:attr/selectableItemBackground"
-        android:clickable="true"
-        android:orientation="horizontal"
-        android:paddingTop="13dp"
-        android:paddingBottom="13dp">
+            android:orientation="horizontal"
+            android:paddingTop="13dp"
+            android:paddingBottom="13dp"
+            android:paddingStart="15dp"
+            android:paddingEnd="15dp">
+            <TextView
+                android:layout_width="80sp"
+                android:layout_height="wrap_content"
+                android:text="家庭名称:"
+                android:textColor="#6E6E6E"
+                android:textSize="@dimen/common_font_size"/>
+            <TextView
+                android:id="@+id/familyName"
+                android:clickable="true"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_weight="1"
+                android:textColor="#6E6E6E"
+                android:textSize="@dimen/common_font_size"/>
+        </LinearLayout>
         <TextView
-            android:layout_width="80sp"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+            android:background="@color/grey" />
+        <LinearLayout
+            android:id="@+id/family_address"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="15dp"
-            android:text="家庭地址:"
-            android:textColor="#6E6E6E"
-            android:textSize="@dimen/common_font_size"/>
+            android:background="?android:attr/selectableItemBackground"
+            android:clickable="true"
+            android:orientation="horizontal"
+            android:paddingTop="13dp"
+            android:paddingBottom="13dp">
+            <TextView
+                android:layout_width="80sp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:text="家庭地址:"
+                android:textColor="#6E6E6E"
+                android:textSize="@dimen/common_font_size"/>
+            <TextView
+                android:id="@+id/familyAddress"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_weight="1"
+                android:textColor="#6E6E6E"
+                android:textSize="@dimen/common_font_size"/>
+        </LinearLayout>
         <TextView
-            android:id="@+id/familyAddress"
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="15dp"
-            android:layout_weight="1"
-            android:textColor="#6E6E6E"
+            android:text="绑定设备管理"
+            android:textSize="@dimen/large_font_size"
+            android:background="@drawable/my_other_background"
+            android:paddingStart="5dp"
+            android:paddingEnd="5dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="5dp"/>
+        <TextView
+            android:id="@+id/manageDevice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?android:attr/selectableItemBackground"
+            android:clickable="true"
+            android:text="查看关联设备"
+            android:paddingStart="15dp"
+            android:paddingTop="13dp"
+            android:paddingBottom="13dp"
+            android:textColor="@color/teal_200"
             android:textSize="@dimen/common_font_size"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="家庭成员"
+            android:background="@drawable/my_other_background"
+            android:textSize="@dimen/large_font_size"
+            android:paddingStart="5dp"
+            android:paddingEnd="5dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="5dp"/>
+
+        <ListView
+            android:layout_width="match_parent"
+            android:id="@+id/liner"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="vertical" />
+        <TextView
+            android:id="@+id/textTip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="50sp"
+            android:text="快快邀请成员加入吧!"
+            android:textSize="@dimen/small_font_size"/>
+        <Button
+            android:id="@+id/delete"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="删除此家庭"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"/>
     </LinearLayout>
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="绑定设备管理"
-        android:textSize="@dimen/large_font_size"
-        android:background="@drawable/my_other_background"
-        android:paddingStart="5dp"
-        android:paddingEnd="5dp"
-        android:paddingTop="10dp"
-        android:paddingBottom="5dp"/>
-    <TextView
-        android:id="@+id/manageDevice"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="?android:attr/selectableItemBackground"
-        android:clickable="true"
-        android:text="查看关联设备"
-        android:paddingStart="15dp"
-        android:paddingTop="13dp"
-        android:paddingBottom="13dp"
-        android:textColor="@color/teal_200"
-        android:textSize="@dimen/common_font_size"/>
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="家庭成员"
-        android:background="@drawable/my_other_background"
-        android:textSize="@dimen/large_font_size"
-        android:paddingStart="5dp"
-        android:paddingEnd="5dp"
-        android:paddingTop="10dp"
-        android:paddingBottom="5dp"/>
-
-    <ListView
-        android:layout_width="match_parent"
-        android:id="@+id/liner"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:orientation="vertical" />
-    <TextView
-        android:id="@+id/textTip"
+    <com.getbase.floatingactionbutton.FloatingActionButton
+        android:id="@+id/addNewButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="50sp"
-        android:text="快快邀请成员加入吧!"
-        android:textSize="@dimen/small_font_size"/>
-    <Button
-        android:id="@+id/delete"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="删除此家庭"
-        android:layout_marginStart="5dp"
-        android:layout_marginEnd="5dp"/>
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="38dp"
+        app:fab_icon="@drawable/add"
+        app:fab_size="normal"
+        app:fab_colorNormal="#fee">
+    </com.getbase.floatingactionbutton.FloatingActionButton>
 
-</LinearLayout>
+</RelativeLayout>
