@@ -25,6 +25,7 @@ import java.util.List;
 public class DashboardFragment extends Fragment implements AdapterView.OnItemClickListener {
     private FragmentDashboardBinding binding;
     private List<String> FragmentRoom;
+    FragmentDeviceAdapter adapters;
 
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         binding = FragmentDashboardBinding.inflate(inflater, container, false);
@@ -42,7 +43,7 @@ public class DashboardFragment extends Fragment implements AdapterView.OnItemCli
         ListView listView = binding.liner;
         TextView textTip = binding.textTip;
         listView.setEmptyView(textTip);
-        FragmentDeviceAdapter adapters = new FragmentDeviceAdapter(getActivity(),CommonVariables.deviceList);
+        adapters = new FragmentDeviceAdapter(getActivity(),CommonVariables.deviceList);
         listView.setAdapter(adapters);
         listView.setOnItemClickListener(this);
         return root;
@@ -59,5 +60,11 @@ public class DashboardFragment extends Fragment implements AdapterView.OnItemCli
         Intent intent = new Intent(getActivity(), DeviceInRoomActivity.class);
         intent.putExtra("id", i);
         startActivity(intent);
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        adapters.notifyDataSetChanged();
     }
 }

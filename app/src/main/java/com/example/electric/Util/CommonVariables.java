@@ -44,4 +44,8 @@ public class CommonVariables extends Application {
             return "0";
         else return String.valueOf(CommonVariables.deviceList.size());
     }
+
+
+
+
 }
