@@ -13,8 +13,13 @@ import android.widget.TextView;
 
 import com.example.electric.My.Family.ManageFamily;
 import com.example.electric.R;
+import com.example.electric.Util.ChartView;
 import com.example.electric.Util.CommonVariables;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -51,6 +56,25 @@ public class DeviceInRoomActivity extends AppCompatActivity implements View.OnCl
         }
         isOpenImage.setOnClickListener(this);
         findViewById(R.id.delete).setOnClickListener(this);
+
+        //折线图
+        //x轴坐标对应的数据
+        List<String> xValue = new ArrayList<>();
+        //y轴坐标对应的数据
+        List<Integer> yValue = new ArrayList<>();
+        //折线对应的数据
+        Map<String, Integer> value = new HashMap<>();
+
+        //折线图-月度用电
+        for (int i = 0; i < 12; i++) {
+            xValue.add(((i + 5) % 12 + 1) + "月");
+            value.put(((i + 5) % 12 + 1) + "月", (int) (Math.random() * 35 + 10));
+        }
+        for (int i = 0; i < 10; i++) {
+            yValue.add(i * 5);
+        }
+        ChartView chartView = findViewById(R.id.chartView);
+        chartView.setValue(value, xValue, yValue);
     }
 
     //定时函数

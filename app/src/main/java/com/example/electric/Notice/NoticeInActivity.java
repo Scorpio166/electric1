@@ -8,27 +8,33 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.ListView;
 import android.widget.Switch;
 import android.widget.TextView;
 
+import com.example.electric.My.Device.DeviceInRoomActivity;
 import com.example.electric.R;
 import com.example.electric.Util.CommonVariables;
+import com.example.electric.entity.Device;
 import com.example.electric.entity.Notice;
 import com.example.electric.ui.notifications.NotificationsFragment;
 
 import java.util.List;
 
-public class NoticeInActivity extends AppCompatActivity {
+public class NoticeInActivity extends AppCompatActivity implements View.OnClickListener {
     private int id;
     private int flag;
     private Switch noticeSwitch;
+    private int positionDevice = (int) (Math.random() * 5);
     @Override
     @SuppressLint("UseSwitchCompatOrMaterialCode")
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_notice_in);
-        
+
         Intent intent = this.getIntent();
         id = intent.getIntExtra("id", 0);
         flag = intent.getIntExtra("flag", 0);
@@ -39,6 +45,17 @@ public class NoticeInActivity extends AppCompatActivity {
         }else{
             InitData(CommonVariables.noticedList);
         }
+        TextView deviceName = findViewById(R.id.deviceName);
+        TextView joinTime = findViewById(R.id.joinTime);
+        TextView isOnline = findViewById(R.id.isOnline);
+
+        LinearLayout deviceUrl = findViewById(R.id.deviceUrl);
+
+        Device device = CommonVariables.deviceList.get(positionDevice);
+        deviceName.setText(device.getDeviceName());
+        joinTime.setText(device.getActivateTime());
+        isOnline.setText("在线");//接口未完善
+        deviceUrl.setOnClickListener(this);
     }
     private void InitData(List<Notice> noList){
         TextView noticeName = findViewById(R.id.noticeName);
@@ -118,5 +135,12 @@ public class NoticeInActivity extends AppCompatActivity {
                 }
             }).setCancelable(false).show();
         }
+    }
+
+    @Override
+    public void onClick(View view) {
+        Intent intent = new Intent(NoticeInActivity.this, DeviceInRoomActivity.class);
+        intent.putExtra("id", positionDevice);
+        startActivity(intent);
     }
 }

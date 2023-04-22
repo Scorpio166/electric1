@@ -64,13 +64,24 @@ public class MainActivity extends AppCompatActivity {
         CommonVariables.noticeList = new ArrayList<>();
         CommonVariables.noticedAdapter = new MyNoticeAdapter(this, 1);
         CommonVariables.noticedList = new ArrayList<>();
+
         //初始化noticeList数据
-        for (int i = 0; i < 10; i++) {
-            CommonVariables.noticeList.add(new Notice("姓名" + i, "时间：" + i, "类型" + i, 0));
-        }
-        for (int i = 100; i < 110; i++) {
-            CommonVariables.noticedList.add(new Notice("姓名" + i, "时间：" + i, "类型" + i, 1));
-        }
+        CommonVariables.noticeList.add(new Notice("工作时间过长", "2023/4/28T18:06", "提示", 0));
+        CommonVariables.noticeList.add(new Notice("电器断开连接", "2023/4/24T01:26", "警报", 0));
+        CommonVariables.noticeList.add(new Notice("电器电压不足", "2023/4/23T07:15", "警报", 0));
+        CommonVariables.noticeList.add(new Notice("工作温度异常", "2023/4/22T12:34", "警报", 0));
+        //初始化noticedList数据
+        CommonVariables.noticedList.add(new Notice("电器电压不足", "2023/4/09T17:59", "警报",1));
+        CommonVariables.noticedList.add(new Notice("电器频繁开关", "2023/3/21T15:38", "提示",1));
+        CommonVariables.noticedList.add(new Notice("工作时间过长", "2023/3/01T10:55", "提示",1));
+        CommonVariables.noticedList.add(new Notice("电器电压不足", "2023/2/17T07:15", "警报",1));
+        CommonVariables.noticedList.add(new Notice("工作温度异常", "2023/1/23T18:19", "警报", 1));
+//        for (int i = 0; i < 10; i++) {
+//            CommonVariables.noticeList.add(new Notice("姓名" + i, "时间：" + i, "类型" + i, 0));
+//        }
+//        for (int i = 100; i < 110; i++) {
+//            CommonVariables.noticedList.add(new Notice("姓名" + i, "时间：" + i, "类型" + i, 1));
+//        }
 
         countDownLatch = new CountDownLatch(2);
         DoDevice();

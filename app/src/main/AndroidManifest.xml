@@ -19,6 +19,30 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".My.Account.ModifyPhoneActivity"
+            android:exported="false"
+            android:label="修改手机号">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".LoginRegisterActivity"
+            android:exported="false"
+            android:label="注册账号">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".LoginForgetActivity"
+            android:exported="false"
+            android:label="忘记密码">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".Add.AddDeviceInRoomActivity"
             android:exported="false"
             android:label="添加设备">
@@ -80,7 +104,8 @@
         </activity>
         <activity
             android:name=".My.Account.ModifyAddressActivity"
-            android:exported="false">
+            android:exported="false"
+            android:label="修改地址">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />

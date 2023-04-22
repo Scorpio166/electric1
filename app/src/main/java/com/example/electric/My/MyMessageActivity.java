@@ -66,7 +66,6 @@ public class MyMessageActivity extends AppCompatActivity {
                         if(str.equals("data")){
                             JSONObject jsonObject = JSONObject.parseObject(Objects.requireNonNull(re.get(str)).toString());
                             String messageStr = jsonObject.getString("notice");
-                            Log.i("MyMessageActivity：", "data:    " + messageStr);
                             CommonVariables.messageList = JSONObject.parseArray(messageStr, Message.class);
                         }
                     }

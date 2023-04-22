@@ -79,6 +79,13 @@
             android:textColorHint="@color/grey"
             android:textSize="@dimen/common_font_size" />
 
+        <Button
+            android:id="@+id/btn_forget"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="忘记密码"
+            android:textSize="@dimen/common_font_size" />
+
     </LinearLayout>
 
     <CheckBox
@@ -95,9 +102,16 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="5dp"
-        android:backgroundTint="@color/grey"
         android:text="@string/login"
-        android:textColor="@color/black"
+        android:textSize="@dimen/button_font_size" />
+
+    <Button
+        android:id="@+id/btn_register"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:text="注册"
+        android:backgroundTint="@color/grey"
         android:textSize="@dimen/button_font_size" />
 
 </LinearLayout>

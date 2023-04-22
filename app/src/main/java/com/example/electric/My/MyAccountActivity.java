@@ -17,6 +17,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.electric.LoginMainActivity;
 import com.example.electric.MainActivity;
 import com.example.electric.My.Account.ModifyAddressActivity;
+import com.example.electric.My.Account.ModifyPhoneActivity;
 import com.example.electric.R;
 import com.example.electric.Util.User;
 import com.example.electric.Util.ViewUtil;
@@ -55,13 +56,20 @@ public class MyAccountActivity extends AppCompatActivity {
             MyHeadAvatar.setImageResource(R.drawable.unlogin);
         }
 
+        TextView userName = findViewById(R.id.information_userName);
+        userName.setText(User.getUser_name());
+
+
         Log.i("MyAccountActivity", "onCreate: " + "User.phonenumber:" + User.getPhonenumber());
         TextView information_phoneNumber = findViewById(R.id.information_phoneNumber);
         information_phoneNumber.setText(User.getPhonenumber());
         information_phoneNumber.setOnClickListener(v ->{
-            AlertDialog.Builder builder = new AlertDialog.Builder(this);// 自定义对话框
-            builder.setMessage("暂未开通修改手机号功能");
-            builder.show();// 让弹出框显示
+//            AlertDialog.Builder builder = new AlertDialog.Builder(this);// 自定义对话框
+//            builder.setMessage("暂未开通修改手机号功能");
+//            builder.show();// 让弹出框显示
+            Intent intent = new Intent(MyAccountActivity.this, ModifyPhoneActivity.class);
+            startActivity(intent);
+
         });
 
         TextView information_address = findViewById(R.id.information_address);

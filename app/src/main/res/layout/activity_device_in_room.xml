@@ -173,7 +173,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="0V"
+                            android:text="120V"
                             android:textColor="@color/teal_200"/>
                     </LinearLayout>
 
@@ -194,7 +194,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="0A"
+                            android:text="20A"
                             android:textColor="@color/teal_200"/>
                     </LinearLayout>
 
@@ -215,7 +215,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="0W"
+                            android:text="2400W"
                             android:textColor="@color/teal_200"/>
                     </LinearLayout>
 
@@ -245,7 +245,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="0HZ"
+                            android:text="144HZ"
                             android:textColor="@color/teal_200"/>
                     </LinearLayout>
 
@@ -266,7 +266,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="0℃"
+                            android:text="31℃"
                             android:textColor="@color/teal_200"/>
                     </LinearLayout>
 
@@ -287,7 +287,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="0%"
+                            android:text="20%"
                             android:textColor="@color/teal_200"/>
                     </LinearLayout>
 
@@ -330,7 +330,7 @@
                 android:id="@+id/delete"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="删除此家庭"
+                android:text="删除此设备"
                 android:layout_marginStart="5dp"
                 android:layout_marginEnd="5dp"/>
 

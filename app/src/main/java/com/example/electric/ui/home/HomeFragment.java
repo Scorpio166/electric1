@@ -41,6 +41,7 @@ public class HomeFragment extends Fragment {
         PieChartView pie_Chart= binding.pieChart;
         pie_Chart.setItemList(pieChatItems);
         pie_Chart.setData(pieChatDatas,"度");
+
         //折线图
         //x轴坐标对应的数据
         List<String> xValue = new ArrayList<>();
@@ -51,8 +52,8 @@ public class HomeFragment extends Fragment {
 
         //折线图-月度用电
         for (int i = 0; i < 12; i++) {
-            xValue.add((i + 5) % 12 + "月");
-            value.put((i + 5) % 12 + "月", (int) (Math.random() * 141 + 60));//60--221
+            xValue.add(((i + 5) % 12 + 1) + "月");
+            value.put(((i + 5) % 12 + 1) + "月", (int) (Math.random() * 141 + 60));//60--221
         }
         for (int i = 0; i < 6; i++) {
             yValue.add(i * 45);
