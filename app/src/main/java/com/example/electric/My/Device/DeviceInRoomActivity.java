@@ -2,6 +2,8 @@ package com.example.electric.My.Device;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.databinding.DataBindingUtil;
+import androidx.databinding.ViewDataBinding;
 
 import android.annotation.SuppressLint;
 import android.content.DialogInterface;
@@ -15,6 +17,7 @@ import com.example.electric.My.Family.ManageFamily;
 import com.example.electric.R;
 import com.example.electric.Util.ChartView;
 import com.example.electric.Util.CommonVariables;
+import com.example.electric.databinding.ActivityMainBinding;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -37,6 +40,9 @@ public class DeviceInRoomActivity extends AppCompatActivity implements View.OnCl
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_device_in_room);
+//        ActivityMainBinding binding = DataBindingUtil.setContentView(this, R.layout.activity_device_in_room);
+
+
         id = this.getIntent().getExtras().getInt("id");
         TextView deviceName = findViewById(R.id.deviceName);
         TextView joinTime = findViewById(R.id.joinTime);
@@ -77,6 +83,8 @@ public class DeviceInRoomActivity extends AppCompatActivity implements View.OnCl
         chartView.setValue(value, xValue, yValue);
     }
 
+    //本页面使用databinding进行数据绑定，实现MVVM框架
+//    ViewDataBinding binding = DataBindingUtil.setContentView(this, R.layout.activity_device_in_room);
     //定时函数
     private void startTime() {
         if(timer==null){
@@ -85,10 +93,15 @@ public class DeviceInRoomActivity extends AppCompatActivity implements View.OnCl
         timerTask = new TimerTask() {
             @Override
             public void run() {
-
+                //向服务器发送请求获取电器数据
+                doGetData();
             }
         };
         timer.schedule(timerTask, 1000);//1000ms执行一次
+    }
+
+    private void doGetData() {
+
     }
 
 
@@ -108,7 +121,7 @@ public class DeviceInRoomActivity extends AppCompatActivity implements View.OnCl
                 isOpenImage.setImageResource(R.drawable.switch_off);
             }
         }else if(view == findViewById(R.id.delete)){
-            openDialog("是否确认删除此家庭？","此操作不可恢复！");
+            openDialog("是否确认删除此设备？","此操作不可恢复！");
         }
     }
     //弹出对话框--------------------------------------------------

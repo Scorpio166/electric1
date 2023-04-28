@@ -40,26 +40,36 @@ public class DashboardFragment extends Fragment implements AdapterView.OnItemCli
         room.setAdapter(adapter);
         room.setSelection(0);
 //        room.setOnItemSelectedListener(this);
+
+
+        //绑定页面控件
         ListView listView = binding.liner;
         TextView textTip = binding.textTip;
+        //设置设备列表内元素个数为0时展示”暂无数据“的提示
         listView.setEmptyView(textTip);
+        //设备标签所绑定的适配器Adapter
         adapters = new FragmentDeviceAdapter(getActivity(),CommonVariables.deviceList);
         listView.setAdapter(adapters);
+        //设置列表每个item被点击的点击事件监听器
         listView.setOnItemClickListener(this);
+
         return root;
+    }
+    //item点击事件监听函数
+    @Override
+    public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+        //带参数跳转到设备详细信息页面
+        Intent intent = new Intent(getActivity(), DeviceInRoomActivity.class);
+        //向新页面穿的的参数：设备编号
+        intent.putExtra("id", i);
+        //执行带参数跳转
+        startActivity(intent);
     }
 
     @Override
     public void onDestroyView() {
         super.onDestroyView();
         binding = null;
-    }
-
-    @Override
-    public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-        Intent intent = new Intent(getActivity(), DeviceInRoomActivity.class);
-        intent.putExtra("id", i);
-        startActivity(intent);
     }
 
     @Override

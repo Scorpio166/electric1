@@ -99,7 +99,6 @@ public class MainActivity extends AppCompatActivity {
             try {
                 //new一个访问的url
                 URL url = new URL(baseurl + "device/" + user_id);
-//                Log.i("MyViewModel：", "url:" + url);
                 //创建HttpURLConnection 实例
                 HttpURLConnection connection = (HttpURLConnection) url.openConnection();
                 //提交数据的方式
@@ -111,20 +110,20 @@ public class MainActivity extends AppCompatActivity {
                 //读取超时
                 connection.setReadTimeout(8000);
 
-//                Log.d("MyViewModel", "DoDevice: " + connection.getResponseCode());
                 if (connection.getResponseCode() == 200) {
                     //接收服务器输入流信息
                     InputStream is = connection.getInputStream();
                     BufferedReader br = new BufferedReader(new InputStreamReader(is));
-                    //拿到信息
+                    //拿到信息转换为String字符串
                     String result = br.readLine();
-//                    Log.i("MyViewModel：", "DoDevice返回数据:  " + result);
                     JSONObject re = JSON.parseObject(result);
+                    //使用re变量
                     for(String str:re.keySet()){
                         if(str.equals("data")){
                             JSONObject jsonObject = JSONObject.parseObject(Objects.requireNonNull(re.get(str)).toString());
                             String deviceStr = jsonObject.getString("device");
                             Log.i("MyViewModel：", "DoDevice返回data:   " + deviceStr);
+                            //使用Fastjson JSON将deviceStr字符串按照Device类进行解析
                             CommonVariables.deviceList = JSONObject.parseArray(deviceStr, Device.class);
                         }
                     }
