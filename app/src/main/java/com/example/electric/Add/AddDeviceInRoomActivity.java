@@ -4,9 +4,7 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-
 import com.example.electric.R;
-
 public class AddDeviceInRoomActivity extends AppCompatActivity implements View.OnClickListener {
 
     @Override

@@ -19,8 +19,6 @@ import android.view.VelocityTracker;
 import android.view.View;
 import android.view.animation.DecelerateInterpolator;
 
-import com.example.electric.R;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;

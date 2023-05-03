@@ -140,7 +140,6 @@ public class MainActivity extends AppCompatActivity {
             try {
                 //new一个访问的url
                 URL url = new URL(baseurl + "room/group/list?userId=" + user_id);
-//                Log.i("MyViewModel：", "DoRoomGroup url:" + url);
                 //创建HttpURLConnection 实例
                 HttpURLConnection connection = (HttpURLConnection) url.openConnection();
                 //提交数据的方式
@@ -154,9 +153,7 @@ public class MainActivity extends AppCompatActivity {
                 connection.setConnectTimeout(8000);//连接超时
                 //读取超时
                 connection.setReadTimeout(8000);
-
                 connection.connect();
-
                 if (connection.getResponseCode() == 200) {
                     //接收服务器输入流信息
                     InputStream is = connection.getInputStream();

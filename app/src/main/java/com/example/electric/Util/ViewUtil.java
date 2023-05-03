@@ -7,6 +7,10 @@ import android.graphics.BitmapFactory;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 
+import androidx.appcompat.app.AlertDialog;
+
+import com.example.electric.My.Device.DeviceInRoomActivity;
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.HttpURLConnection;
@@ -22,6 +26,11 @@ public class ViewUtil {
         for (View v : viewList) {
             imm.hideSoftInputFromWindow(v.getWindowToken(), InputMethodManager.HIDE_NOT_ALWAYS);
         }
+    }
+    public static void showAToast(Context context, String mes){
+        AlertDialog.Builder builder = new AlertDialog.Builder(context);// 自定义对话框
+        builder.setMessage(mes);
+        builder.show();// 让弹出框显示
     }
 
     public static Bitmap ReturnBitmap(String image_url) {//将url转化为bitmap

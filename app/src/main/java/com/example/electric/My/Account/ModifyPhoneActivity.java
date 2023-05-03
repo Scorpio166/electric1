@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
-import com.example.electric.R;
 import androidx.appcompat.app.AlertDialog;
 import com.example.electric.Util.User;
 

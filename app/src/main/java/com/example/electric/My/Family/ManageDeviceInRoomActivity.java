@@ -9,7 +9,6 @@ import android.widget.ListView;
 import android.widget.TextView;
 import com.example.electric.Add.AddDeviceInRoomActivity;
 import com.example.electric.My.Device.DeviceInRoomActivity;
-import com.example.electric.R;
 import com.example.electric.Util.CommonVariables;
 import com.example.electric.adapter.FragmentDeviceAdapter;
 

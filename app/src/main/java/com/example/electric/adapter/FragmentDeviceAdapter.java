@@ -8,7 +8,6 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.electric.R;
 import com.example.electric.Util.CommonVariables;
 import com.example.electric.entity.Device;
 

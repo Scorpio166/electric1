@@ -7,20 +7,15 @@ import android.annotation.SuppressLint;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.ListView;
 import android.widget.Switch;
 import android.widget.TextView;
 
 import com.example.electric.My.Device.DeviceInRoomActivity;
-import com.example.electric.R;
 import com.example.electric.Util.CommonVariables;
 import com.example.electric.entity.Device;
 import com.example.electric.entity.Notice;
-import com.example.electric.ui.notifications.NotificationsFragment;
 
 import java.util.List;
 
@@ -77,7 +72,7 @@ public class NoticeInActivity extends AppCompatActivity implements View.OnClickL
     }
     private void SetOnCheckedChangeListener1(List<Notice> noList){
         noticeSwitch.setOnCheckedChangeListener((compoundButton, b) -> {
-            if(noList.get(id).getIsDo() != 0) {
+            if(noList.get(id).getIsDo() != 0) {//现在已处理 点击取消处理
                 openDialog("","是否确认取消处理？", noList);
             }
             else {//现在未处理 点击进行处理
@@ -87,7 +82,7 @@ public class NoticeInActivity extends AppCompatActivity implements View.OnClickL
     }
     //弹出对话框--------------------------------------------------
     private void openDialog(String strMsg, String strTitle, List<Notice> noList){
-        if(flag == 0){
+        if(flag == 0){//对未处理告警操作进行处理
             new AlertDialog.Builder(this).setTitle(strTitle).setMessage(strMsg).setPositiveButton("确认", new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
@@ -95,7 +90,6 @@ public class NoticeInActivity extends AppCompatActivity implements View.OnClickL
                     //并在noticedList中添加
                     CommonVariables.noticedList.add(0, CommonVariables.noticeList.get(id));
                     CommonVariables.noticedAdapter.notifyDataSetChanged();//在在noticedList删除数据的时候 记得要刷新适配器
-
                     //在noticeList中删除
                     CommonVariables.noticeList.remove(id);
                     CommonVariables.noticeAdapter.notifyDataSetChanged();//在在noticeList删除数据的时候 记得要刷新适配器
@@ -110,7 +104,7 @@ public class NoticeInActivity extends AppCompatActivity implements View.OnClickL
                     SetOnCheckedChangeListener1(noList);
                 }
             }).setCancelable(false).show();
-        }else{
+        }else{//对已处理告警操作进行撤销处理
             new AlertDialog.Builder(this).setTitle(strTitle).setMessage(strMsg).setPositiveButton("确认", new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialog, int which) {

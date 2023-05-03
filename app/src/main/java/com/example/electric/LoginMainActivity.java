@@ -15,7 +15,7 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
-
+import com.example.electric.R;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.alibaba.fastjson.JSON;
@@ -82,14 +82,7 @@ public class LoginMainActivity extends AppCompatActivity implements View.OnClick
 
     @Override
     public void onClick(View v) {
-        if(v == findViewById(R.id.btn_login)){
-            progressDialog = new Dialog(LoginMainActivity.this,R.style.progress_dialog);
-            progressDialog.setContentView(R.layout.activity_loading);
-            progressDialog.getWindow().setBackgroundDrawableResource(android.R.color.transparent);
-            TextView msg = progressDialog.findViewById(R.id.dialog_loading_tipTextView);
-            msg.setText("卖力加载中");
-            progressDialog.show();
-
+        if(v == findViewById(R.id.btn_login)){//登陆部分验证
             String login_name = et_login_name.getText().toString();
             if (login_name.length() > 11) {
                 Toast.makeText(this, "账号异常", Toast.LENGTH_SHORT).show();
@@ -102,6 +95,13 @@ public class LoginMainActivity extends AppCompatActivity implements View.OnClick
             //开辟子线程进行服务器数据交互
             new Thread(() -> {
                 try {
+                    //使用HttpURLConnection访问网络的步骤如下：
+                    // (1) 创建URL对象。
+                    // (2) 调用URL对象的openConnection()方法获取HttpURLConnection对象。
+                    // (3) 调用setRequestMethod()方法设置http请求的方式。
+                    // (4) 通过setConnectTimeout()方法设置连接的超时时间。
+                    // (5) 调用getInputStream()方法获取服务器返回的输入流。
+                    // (6) 最后调用disconnect()方法关闭http连接。
                     //new一个访问的url
                     URL url = new URL(baseurl + "login?loginName=" + et_login_name.getText().toString() + "&password=" + et_login_password.getText().toString());
                     //创建HttpURLConnection 实例
@@ -201,19 +201,16 @@ public class LoginMainActivity extends AppCompatActivity implements View.OnClick
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-
-            progressDialog.dismiss();
-
             if(login_code == 0){// 提示用户登录成功
                 login_code = -1;//方便下次登录
                 loginSuccess();
             }else{//登录失败
-                loginFail();
+                loginFail();//向用户提示登录失败
             }
-        }else if(v == findViewById(R.id.btn_register)){
+        }else if(v == findViewById(R.id.btn_register)){//跳转到注册页面
             Intent intent = new Intent(LoginMainActivity.this, LoginRegisterActivity.class);
             startActivity(intent);
-        }else if(v == findViewById(R.id.btn_forget)){
+        }else if(v == findViewById(R.id.btn_forget)){//跳转到忘记密码页面
             Intent intent = new Intent(LoginMainActivity.this, LoginForgetActivity.class);
             startActivity(intent);
         }

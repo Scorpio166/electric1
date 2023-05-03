@@ -5,20 +5,16 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-
+import com.example.electric.R;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.electric.LoginMainActivity;
-import com.example.electric.MainActivity;
-import com.example.electric.My.Account.ModifyAddressActivity;
 import com.example.electric.My.Account.ModifyPhoneActivity;
-import com.example.electric.R;
 import com.example.electric.Util.User;
 import com.example.electric.Util.ViewUtil;
 

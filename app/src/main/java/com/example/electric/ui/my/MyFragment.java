@@ -1,6 +1,5 @@
 package com.example.electric.ui.my;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -12,9 +11,6 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
-import com.example.electric.MainActivity;
-import com.example.electric.My.MyDeviceActivity;
-import com.example.electric.R;
 import com.example.electric.Util.CommonVariables;
 import com.example.electric.Util.User;
 import com.example.electric.Util.ViewUtil;

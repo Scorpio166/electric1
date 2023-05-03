@@ -6,8 +6,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
-import com.example.electric.R;
-
 public class AddUserInRoomActivity extends AppCompatActivity implements View.OnClickListener{
 
     @Override

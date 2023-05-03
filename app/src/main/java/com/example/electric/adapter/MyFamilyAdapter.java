@@ -2,25 +2,15 @@ package com.example.electric.adapter;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
-import android.content.Intent;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.example.electric.LoginMainActivity;
-import com.example.electric.MainActivity;
-import com.example.electric.My.Family.ManageFamily;
-import com.example.electric.R;
 import com.example.electric.Util.CommonVariables;
 import com.example.electric.entity.Family;
-
-import java.util.List;
 
 
 public class MyFamilyAdapter extends BaseAdapter  {//implements View.OnClickListener

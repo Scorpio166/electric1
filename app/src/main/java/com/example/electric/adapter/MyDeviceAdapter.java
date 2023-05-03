@@ -13,15 +13,12 @@ import android.widget.ImageView;
 import android.widget.Switch;
 import android.widget.TextView;
 
-import com.example.electric.R;
 import com.example.electric.Util.CommonVariables;
-import com.example.electric.Util.User;
 import com.example.electric.entity.Device;
 
 import java.io.InputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
-import java.util.Base64;
 import java.util.concurrent.CountDownLatch;
 
 

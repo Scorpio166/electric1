@@ -3,19 +3,14 @@ package com.example.electric.My;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.widget.ListView;
 import android.widget.TextView;
-
+import com.example.electric.R;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
-import com.example.electric.R;
 import com.example.electric.Util.CommonVariables;
 import com.example.electric.Util.User;
 import com.example.electric.adapter.MessageAdapter;
-import com.example.electric.adapter.MyDeviceAdapter;
-import com.example.electric.entity.Device;
-import com.example.electric.entity.Family;
 import com.example.electric.entity.Message;
 
 import java.io.BufferedReader;

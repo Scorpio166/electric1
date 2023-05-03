@@ -1,10 +1,8 @@
 package com.example.electric.My.Account;
 
 import androidx.appcompat.app.AppCompatActivity;
-
-import android.os.Bundle;
-
 import com.example.electric.R;
+import android.os.Bundle;
 
 public class ModifyAddressActivity extends AppCompatActivity {
 

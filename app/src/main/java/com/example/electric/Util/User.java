@@ -1,8 +1,10 @@
 package com.example.electric.Util;
 
+import androidx.databinding.BaseObservable;
+
 import java.math.BigInteger;
 
-public class User {
+public class User extends BaseObservable {
     private static String user_id;
     private static String login_name;//登录账号  输入
     private static String user_name;//用户昵称  userName

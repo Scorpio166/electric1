@@ -7,7 +7,6 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
-import com.example.electric.R;
 import com.example.electric.entity.RoomUser;
 
 import java.util.List;

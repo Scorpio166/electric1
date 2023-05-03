@@ -9,7 +9,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
-import com.example.electric.R;
 import com.example.electric.Util.CommonVariables;
 
 public class ModifyRoomNameActivity extends AppCompatActivity implements View.OnClickListener{

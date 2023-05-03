@@ -9,9 +9,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.example.electric.R;
-import com.example.electric.Util.CommonVariables;
-
 public class ManageUserInRoomActivity extends AppCompatActivity implements View.OnClickListener {
     private String user_name;
     private String create_time;
